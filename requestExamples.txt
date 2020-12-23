@@ -1,0 +1,105 @@
+//add some room into database
+Post localhost:8080/validateRoom
+{
+    "points":[
+        {"x": 0,
+        "y": 1},
+        {"x": 0,
+        "y": 2},
+        {"x": 1,
+        "y": 2},
+        {"x": 1,
+        "y": 1}
+    ]
+}
+
+//show all rooms
+Get localhost:8080/validateRoom
+
+//change room with id=1(it will show error "Diagonal walls")
+Put localhost:8080/validateRoom?id=1
+{
+    "points":[
+        {"x": 0,
+        "y": 3},
+        {"x": 0,
+        "y": 2},
+        {"x": 1,
+        "y": 2},
+        {"x": 1,
+        "y": 1}
+    ]
+}
+
+//delete room with id=1
+Delete localhost:8080/validateRoom?id=1
+
+//check for walls intersect validation
+Post localhost:8080/validateRoom
+{
+    "points":[
+        {"x": 0,
+        "y": 3},
+        {"x": 2,
+        "y": 3},
+        {"x": 2,
+        "y": 2},
+        {"x": 1,
+        "y": 2},
+        {"x": 1,
+        "y": 4},
+        {"x": 0,
+        "y": 4}
+    ]
+}
+
+//check for diagonal walls validation
+Post localhost:8080/validateRoom
+{
+    "points": [
+        {
+            "x": 0,
+            "y": 2
+        },
+        {
+            "x": 1,
+            "y": 1
+        },
+        {
+            "x": 1,
+            "y": 2
+        },
+        {
+            "x": 0,
+            "y": 1
+        }
+    ]
+}
+
+//check for finite room validation
+Post localhost:8080/validateRoom
+{
+    "points":[
+        {"x": 0,
+        "y": 1},
+        {"x": 1,
+        "y": 1},
+        {"x": 1,
+        "y": 2},
+        {"x": 0,
+        "y": 2}
+    ]
+}
+
+//check for number of points validation
+Post localhost:8080/validateRoom
+{
+    "points":[
+        {"x": 0,
+        "y": 2},
+        {"x": 1,
+        "y": 2},
+        {"x": 1,
+        "y": 1}
+    ]
+}
