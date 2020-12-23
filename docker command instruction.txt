@@ -1,0 +1,3 @@
+cd <your Path to project>
+docker build -t java-test .
+docker run -d -p 3306:3306 --name java_test -e MYSQL_ROOT_PASSWORD=1234 java_test
